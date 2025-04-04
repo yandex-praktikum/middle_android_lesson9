@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import ru.yandexpraktikum.myandroidchat.data.websocket.ConnectionStatus
 import ru.yandexpraktikum.myandroidchat.domain.model.Message
 import ru.yandexpraktikum.myandroidchat.domain.repository.ChatRepository
@@ -39,7 +40,9 @@ class ChatViewModel @Inject constructor(
 
     fun sendMessage(message: String) {
         if (message.isBlank()) return
-        chatRepository.sendMessage(message)
+        viewModelScope.launch {
+            chatRepository.sendMessage(message)
+        }
     }
 
     private fun observeMessages() {

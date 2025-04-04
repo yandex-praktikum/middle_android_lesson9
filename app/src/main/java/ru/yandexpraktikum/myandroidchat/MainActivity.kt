@@ -17,6 +17,7 @@ class MainActivity : ComponentActivity() {
             MyAndroidChatTheme {
                 Surface(color = MaterialTheme.colorScheme.background) {
                     ChatScreen(
+                        // Необходимо подставить адрес сервера
                         websocketUrl = "ws://your-websocket-server-url"
                     )
                 }

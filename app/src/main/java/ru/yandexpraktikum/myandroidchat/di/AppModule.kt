@@ -12,6 +12,7 @@ import okhttp3.OkHttpClient
 import ru.yandexpraktikum.myandroidchat.data.local.ChatDatabase
 import ru.yandexpraktikum.myandroidchat.data.local.MessageDao
 import ru.yandexpraktikum.myandroidchat.data.repository.ChatRepositoryImpl
+import ru.yandexpraktikum.myandroidchat.data.repository.FakeChatRepositoryImpl
 import ru.yandexpraktikum.myandroidchat.data.websocket.ChatWebSocketClient
 import ru.yandexpraktikum.myandroidchat.data.websocket.ChatWebSocketListener
 import ru.yandexpraktikum.myandroidchat.domain.repository.ChatRepository
@@ -21,6 +22,15 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 interface AppModule {
+
+//    //TODO: Раскомментируйте, чтобы протестировать интерфейс
+//    // приложения без обращения к реальному серверу на тестовых данных
+//    // (необходимо закомментировать метод bindChatRepository
+//    @Binds
+//    @Singleton
+//    fun bindFakeChatRepository(
+//        chatRepositoryImpl: FakeChatRepositoryImpl
+//    ): ChatRepository
 
     @Binds
     @Singleton
