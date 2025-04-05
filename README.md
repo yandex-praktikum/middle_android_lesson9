@@ -1,5 +1,3 @@
-a sample project integrating a websocket client within the existing android app architecture
-
-uses a fake repository to test UI without connecting to the actual server
-
-includes unit-testing of the websocket functionality
+Тестовый проект для урока 3 модуля 8 "Практическое применение WebSocket в Android"
+Включает тесты для функциональности работы с вебсокетами
+Чтобы проверить UI без обращения к реальному серверу, нужно заменить зависимость от ChatRepositoryImpl на FakeChatRepositoryImpl (через DI)
